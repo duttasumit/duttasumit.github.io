@@ -76,6 +76,10 @@ width.addEventListener('keyup', () => {
     calculateEverything();
 });
 
+ratepersqft.addEventListener('keyup', () => {
+    calculateEverything();
+});
+
 cementrate.addEventListener('keyup', () => {
     calculateEverything();
 });
