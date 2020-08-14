@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, inline-scale=1">
+        <title>Construction Expenditure Calculator</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <!-- Property Details Section Begin -->
+        <section class="property-details-section spad">
+            <div class="container pt-5">
+                <div class="card h-5 text-center pageheader">
+                    <div class="card-body">Construction Expenditure Calculator</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 areacalc">
+                        <p>Size of plot: 
+                            <span>
+                                <input type="text" name="length" class="plotsize" id="length" placeholder="length" value="40">
+                                <input type="text" name="width" class="plotsize" id="width" placeholder="width" value="25">
+                                <span>ft.</span>
+                            </span>
+                        </p>
+                        <p>Area of plot:
+                            <span>
+                                <input type="text" name="area" class="area font-weight-bold" id="areaofplot" value="0" disabled>
+                                <span>Sq. ft.</span>
+                            </span>
+                        </p>
+                        <p>Construction cost: 
+                            <span>
+                                <input type="text" name="area" class="constcost font-weight-bold" id="constructioncost" value="0" disabled>
+                                <i class="fa fa-inr"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-sm-4 constrate">
+                        <p>Construction Rate: 
+                            <span>
+                                <select class="consttype" id="constructiontype">
+                                    <option value="1000">Normal Quality</option>
+                                    <option value="1200">Medium Quality</option>
+                                    <option value="1500">High Quality</option>
+                                </select>
+                            </span>
+                        </p>
+                        <p>Rate per Sq. ft.: 
+                            <span>
+                                <input type="text" name="area" class="ratepersq" id="ratepersq" value="0">
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="table-desc">
+                    <div class="row">
+                        <div class="col-md-6 table-responsive">
+                            <div class="card h-2 text-center buildingcost">
+                                <div class="card-body constructioncostcard">Building Construction Cost</div>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead class="thead-dark">
+                                  <tr class="text-center">
+                                    <th>Material</th>
+                                    <th>Percentage</th>
+                                    <th>Amount</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Cement</td>
+                                    <td class="text-center" id="cementpercent"></td>
+                                    <td class="text-center" id="cementbccamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Steel</td>
+                                    <td class="text-center" id="steelpercent"></td>
+                                    <td class="text-center" id="steelbccamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Sand</td>
+                                    <td class="text-center" id="sandpercent"></td>
+                                    <td class="text-center" id="sandbccamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Gravel</td>
+                                    <td class="text-center" id="gravelpercent"></td>
+                                    <td class="text-center" id="gravelbccamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Finishing</td>
+                                    <td rowspan="4" class="align-middle text-center" id="finishingpercent"></td>
+                                    <td rowspan="4" class="align-middle text-center" id="finishingbccamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Colors</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Tiles</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Bricks</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Fitting</td>
+                                    <td rowspan="6" class="align-middle text-center" id="fittingpercent">8</td>
+                                    <td rowspan="6" class="align-middle text-center" id="fittingbccamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Windows</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Doors</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Plumbing</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Electrical</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Sanitary</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Total Material Cost</td>
+                                    <td class="text-center" id="totalmaterialcostpercent"></td>
+                                    <td class="text-center" id="totalmaterialcostamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <th>Labour Cost</td>
+                                    <td class="text-center" id="labourcostpercent"></td>
+                                    <td class="text-center" id="labourcostamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <th colspan="2" class="text-right">Total Construction Cost (<i class="fa fa-inr"></i>)</td>
+                                    <td class="text-center" id="totalconstructioncost"></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <div class="col-md-6 table-responsive">
+                            <div class="card h-2 text-center buildingmaterial">
+                                <div class="card-body constructionmaterialcard">Building Construction Materials</div>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead class="thead-dark">
+                                  <tr class="text-center">
+                                    <th>Material</th>
+                                    <th>Qty</th>
+                                    <th>Rate</th>
+                                    <th>Amount</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Cement (Bags)</td>
+                                    <td class="text-center" id="cementqty"></td>
+                                    <td class="pt-3-half text-center" contenteditable="true" id="cementrate">350</td>
+                                    <td class="text-center" id="cementamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Steel (kg)</td>
+                                    <td class="text-center"id="steelqty"></td>
+                                    <td class="pt-3-half text-center" contenteditable="true" id="steelrate">45</td>
+                                    <td class="text-center" id="steelamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Sand (Cu. ft.)</td>
+                                    <td class="text-center" id="sandqty"></td>
+                                    <td class="pt-3-half text-center" contenteditable="true" id="sandrate">50</td>
+                                    <td class="text-center" id="sandamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Gravel (Cu. ft.)</td>
+                                    <td class="text-center" id="gravelqty"></td>
+                                    <td class="pt-3-half text-center" contenteditable="true" id="gravelrate">35</td>
+                                    <td class="text-center" id="gravelamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Bricks (Nos.)</td>
+                                    <td class="text-center" id="bricksqty"></td>
+                                    <td class="pt-3-half text-center" contenteditable="true" id="bricksrate">6</td>
+                                    <td class="text-center" id="bricksamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Tiles (Sq. ft.)</td>
+                                    <td class="text-center" id="tilesqty"></td>
+                                    <td class="pt-3-half text-center" contenteditable="true" id="tilesrate">45</td>
+                                    <td class="text-center" id="tilesamt"></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Color (Ltrs.)</td>
+                                    <td class="text-center" id="colorqty"></td>
+                                    <td class="pt-3-half text-center" contenteditable="true" id="colorrate">250</td>
+                                    <td class="text-center" id="coloramt"></td>
+                                  </tr>
+                                  <tr>
+                                    <th colspan="3" class="text-right">Total (<i class="fa fa-inr"></i>)</td>                                      
+                                    <td class="text-center" class="text-right" id="buildmaterialcost"></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Property Details Section End -->
+
+       
+        <!-- Footer Section End -->
+
+        <!-- Js Plugins -->
+
+        <script src="js/bootstrap.min.js"></script>
+        <script src="calculation.js"></script>
+  
+    </body>
+
+</html>

@@ -1,0 +1,92 @@
+h2{
+    padding: 20px;
+}
+
+div.areacalc {
+    margin-left: 200px;
+}
+
+div.constrate {
+    margin-right: 100px;
+}
+
+.areacalc p {
+    font-size: large;
+}
+
+.plotsize{
+    width: 70px;
+}
+
+.area, .constcost, .ratepersq {
+    width: 100px;
+}
+
+.area {
+    margin-left: 50px;
+}
+
+.ratepersq  {
+    margin-left: 28px;
+}
+
+.constcost, .consttype {
+    margin-left: 5px;
+}
+
+.plotsize, .area, .constcost, .ratepersq {
+    border-style: solid;
+    border-width: 2px;
+    text-align: right;
+}
+
+#length {
+    margin-right: 10px;
+    margin-left: 55px;
+}
+
+.table-desc {
+    padding: inherit;
+}
+
+.buildingcost {
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: larger;
+    background: linear-gradient(40deg,#1b1c1d,#6763cc);
+}
+
+.buildingmaterial {
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: larger;
+    background: linear-gradient(40deg,#1b1c1d,#6763cc);
+}
+
+.table-responsive>.table-bordered {
+    border: 5px solid;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 3px solid #bdb7b7;
+}
+
+input.form-control {
+    width: auto;
+}
+
+.cell-bordered {
+    border-top: 3px solid black;
+}
+
+.pageheader {
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: xx-large;
+    margin-bottom: 30px;
+    background: linear-gradient(40deg,#08f4ac,#f06ec9);
+}
+
+.constructioncostcard, .constructionmaterialcard {
+    color: antiquewhite;
+}
