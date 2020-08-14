@@ -3,11 +3,11 @@ h2{
 }
 
 div.areacalc {
-    margin-left: 200px;
+    margin: auto;
 }
 
 div.constrate {
-    margin-right: 100px;
+    margin: auto;
 }
 
 .areacalc p {
